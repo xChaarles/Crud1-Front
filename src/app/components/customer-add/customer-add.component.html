@@ -1,1 +1,24 @@
-<p>customer-add works!</p>
+<section class="pt-10 items-center">
+    <div class="flex flex-col items-center">
+        <p class="pb-3">add cliente</p>
+
+        <form class="items-center justify-center">
+            <div class="pb-3">
+                <label for="firtsname" class="pr-3">Nombre :</label>
+                <input [(ngModel)]="firstName" type="text" id="firtsName" class="rounded-md border-2 border-black" name="firtsName">
+            </div>
+            <div class="pb-3">
+                <label for="lastname" class="pr-3">Apellido :</label>
+                <input [(ngModel)]="lastName" type="text" id="lastname" class="rounded-md border-2 border-black" name="lastName">
+            </div>
+            <div class="pb-5">
+                <label for="email" class="pr-8">Email :</label>
+                <input [(ngModel)]="email" type="email" id="email" class="rounded-md border-2 border-black" name="email">
+            </div>
+        
+            <div class="mx-[150px]">
+            <button class="rounded-md bg-blue-400 text-white border-2" type="submit" (click)="addCustomer()">Crear</button>
+            </div>
+        </form>
+    </div>
+</section>

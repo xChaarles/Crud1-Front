@@ -20,4 +20,9 @@ export class CustomerService {
     return this.http.post<Customer>(this.api, customer); 
   }
 
+  deleteCustomerById(id : number):Observable<any>{
+    return this.http.delete(this.api+'/'+id);
+  }
+
+
 }

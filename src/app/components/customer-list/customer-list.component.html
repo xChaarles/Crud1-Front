@@ -6,22 +6,24 @@
     <div>
         <table class="table-row">
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
+                <tr class="">
+                    <th class="pr-4">ID</th>
+                    <th class="pr-4">Nombre</th>
+                    <th class="pr-4">Apellido</th>
                     <th>Email</th>
                 </tr>
             </thead>
             <tbody>
                     @for (item of customers; track $index) {
-                        <tr>
-                            <th>{{ item.id }}</th>
-                            <th>{{ item.firstname }}</th>
-                            <th>{{ item.lastname }}</th>
-                            <th>{{ item.email }}</th> 
+                        <tr class="">
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.firstname }}</td>
+                            <td>{{ item.lastname }}</td>
+                            <td>{{ item.email }}</td>
+                            <td><button class="btn pl-4 bg-red-500 rounded-md text-center" (click)="deleteCustomer(item.id)">Delete</button></td>
                         </tr>    
                         }
+                        
             </tbody>
         </table>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../../customer';
 import { CustomerService } from '../../service/customer.service';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-customer-list',
@@ -25,6 +26,13 @@ export class CustomerListComponent implements OnInit {
         this.customers = data;
         console.log(this.customers)
       } 
+    );
+  }
+
+  deleteCustomer(id : number){
+    console.log(id)
+    this.customerService.deleteCustomerById(id).subscribe(
+      () => this.listCustomers()
     );
   }
 
