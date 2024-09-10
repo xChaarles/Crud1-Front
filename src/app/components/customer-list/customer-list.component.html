@@ -1,31 +1,52 @@
-<section class="pt-10">
-<div class="flex flex-col gap-y-7 items-center justify-center">
-    <div class="items-center justify-center">
-        <h2 class="text-xl">Lista Clientes</h2>
-    </div>
-    <div>
-        <table class="table-row">
-            <thead>
-                <tr class="">
-                    <th class="pr-4">ID</th>
-                    <th class="pr-4">Nombre</th>
-                    <th class="pr-4">Apellido</th>
-                    <th>Email</th>
+<section class="flex flex-col items-center pt-52">
+    <caption class="p-5 text-xl font-bold uppercase text-left rtl:text-right text-gray-90 dark:text-white">
+        Lista de clientes
+    </caption>
+    <div class="overflow-x-auto sm:rounded-lg">    
+        <table class="w-[400px] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border-2 rounded-md border-blue-500">
+            
+            <thead class="text-xs border-2 rounded-md border-blue-500 text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        ID
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Nombre
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Apellido
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Email
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
                 </tr>
             </thead>
             <tbody>
-                    @for (item of customers; track $index) {
-                        <tr class="">
-                            <td>{{ item.id }}</td>
-                            <td>{{ item.firstname }}</td>
-                            <td>{{ item.lastname }}</td>
-                            <td>{{ item.email }}</td>
-                            <td><button class="btn pl-4 bg-red-500 rounded-md text-center" (click)="deleteCustomer(item.id)">Delete</button></td>
-                        </tr>    
-                        }
-                        
+                @for (customer of customers; track customer.id) {
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {{ customer.id }}
+                    </th>
+                    <td class="px-6 py-4">
+                        {{ customer.firstname }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ customer.lastname }}   
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ customer.email }}
+                    </td>
+                    <td class="flex px-6 py-4 text-right gap-x-3">
+                         <button (click)="deleteCustomer(customer.id)" 
+                         class="font-medium text-white dark:text-white rounded-md bg-red-600 w-24 h-8">
+                         Delete</button>
+                    </td>
+                </tr>
+                }
             </tbody>
         </table>
-</div>
-</div>
+    </div>
 </section>

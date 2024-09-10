@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from '../../customer';
 import { CustomerService } from '../../service/customer.service';
 import { Subscriber } from 'rxjs';
+import CustomerAddComponent from '../customer-add/customer-add.component';
+import { RouterModule } from '@angular/router';
+import { Customer } from '../customer';
 
 @Component({
-  selector: 'app-customer-list',
   standalone: true,
-  imports: [],
+  imports: [CustomerAddComponent,RouterModule],
   templateUrl: './customer-list.component.html',
   styleUrl: './customer-list.component.css'
 })
-export class CustomerListComponent implements OnInit {
+export default class CustomerListComponent implements OnInit {
 
   customers : Customer [] = [];
 

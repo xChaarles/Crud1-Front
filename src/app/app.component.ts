@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CustomerListComponent } from "./components/customer-list/customer-list.component";
-import { CustomerAddComponent } from "./components/customer-add/customer-add.component";
+//import { CustomerListComponent } from "./components/customer-list/customer-list.component";
+//import { CustomerAddComponent } from "./components/customer-add/customer-add.component";
+import { initFlowbite } from 'flowbite';
+import CustomerListComponent from './components/customer-list/customer-list.component';
+import CustomerAddComponent from './components/customer-add/customer-add.component';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +15,5 @@ import { CustomerAddComponent } from "./components/customer-add/customer-add.com
 })
 export class AppComponent {
   title = 'FullStack';
+
 }

@@ -1,24 +1,26 @@
-<section class="pt-10 items-center">
-    <div class="flex flex-col items-center">
-        <p class="pb-3">add cliente</p>
+<section class="items-center">
+    <div class="flex flex-col items-center pt-52">
+        <div class="flex flex-col items-center">
+        <p class="pb-5 dark:text-white text-lg font-semibold text-left rtl:text-right">Agregar Cliente</p>
 
         <form class="items-center justify-center">
             <div class="pb-3">
-                <label for="firtsname" class="pr-3">Nombre :</label>
+                <label for="firtsname" class="pr-3 dark:text-white text-lg font-semibold text-left rtl:text-right">Nombre :</label>
                 <input [(ngModel)]="firstName" type="text" id="firtsName" class="rounded-md border-2 border-black" name="firtsName">
             </div>
             <div class="pb-3">
-                <label for="lastname" class="pr-3">Apellido :</label>
+                <label for="lastname" class="pr-3 dark:text-white text-lg font-semibold text-left rtl:text-right">Apellido :</label>
                 <input [(ngModel)]="lastName" type="text" id="lastname" class="rounded-md border-2 border-black" name="lastName">
             </div>
-            <div class="pb-5">
-                <label for="email" class="pr-8">Email :</label>
-                <input [(ngModel)]="email" type="email" id="email" class="rounded-md border-2 border-black" name="email">
+            <div class="pb-8 ">
+                <label for="exampleInemail" class="pr-9 dark:text-white text-lg font-semibold text-left rtl:text-right">Email :</label>
+                <input [(ngModel)]="email" type="email" id="exampleInemail" class="rounded-md border-2 border-black" aria-describedby="emailHelp" name="email">
             </div>
         
-            <div class="mx-[150px]">
-            <button class="rounded-md bg-blue-400 text-white border-2" type="submit" (click)="addCustomer()">Crear</button>
+            <div class="flex mx-[150px]">
+            <button class="font-medium text-white dark:text-white rounded-md bg-blue-600 w-24 h-8" (click)="addCustomer()">Crear</button>
             </div>
         </form>
+    </div>
     </div>
 </section>
